@@ -8,7 +8,7 @@ class ReporteForm(forms.ModelForm):
 
     class Meta:
         model = Reporte
-        fields = ('hash', 'json',)
+        fields = ['hash', 'json']
         labels = {
             'Hash': 'Hash',
             'Archivo Json': 'archivoJson',
