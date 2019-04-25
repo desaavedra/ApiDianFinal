@@ -18,10 +18,10 @@ def registrar(request):
         hash1 = form.cleaned_data['hash']
         form.save()
         form = ReporteForm()
-        context = {
-            'form': form,
-        }
-        return render(request, 'Post_reportes.html', context)
+    context = {
+        'form': form,
+    }
+    return render(request, 'Post_reportes.html', context)
 
 
 #    else:
