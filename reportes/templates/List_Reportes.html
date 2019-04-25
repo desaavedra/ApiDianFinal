@@ -24,7 +24,9 @@
                     <table class="table table-hover">
                         <thead>
                         <tr style="color:#0E2EB0">
-                            <th>Reporte:</th>
+                            <th>Reporte</th>
+		            <th>Hash</th>
+                            <th>Información</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -33,7 +35,7 @@
                         <tr>
                             <td>{{ reporte.fecha }}</td>
                             <td>{{ reporte.hash }}</td>
-                            <td>{{ producto.json }}</td>
+                            <td>{{ reporte.json }}</td>
                         </tr>
                         {% endfor %}
 

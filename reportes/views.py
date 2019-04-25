@@ -9,19 +9,20 @@ import base64
 import requests
 
 def registrar(request):
-    hashLocal = hashlib.new("sha256", request)
-    digestLocal = hashLocal.digest()
-    if digestLocal == request.:
+#    hashLocal = hashlib.new("sha256", request)
+#   digestLocal = hashLocal.digest()
+#   if digestLocal == request:
         form = ReporteForm(request.POST or None)
         if form.is_valid():
-            form.save()
+            hash1 = form.cleaned_data['hash']
+	    form.save()
             form = ReporteForm()
         context = {
             'form': form,
         }
         return render(request, 'Post_reportes.html', context)
-    else:
-        return HttpResponse("Unauthorized User")
+#    else:
+#        return HttpResponse("Erro")
 
 def index(request):
     return render(request, 'base.html', {})
