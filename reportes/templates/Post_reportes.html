@@ -1,7 +1,7 @@
 {% extends 'base.html' %} 
 {% block content %} 
 <form method="POST"> 
-    {% if user.is_authenticated %}
+    
     {% csrf_token %}
     <br>
     {{ form.as_p }} 
