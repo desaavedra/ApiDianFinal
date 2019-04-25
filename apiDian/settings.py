@@ -31,12 +31,14 @@ ALLOWED_HOSTS = ['3.214.41.174', 'apidian.club', 'www.apidian.club']
 # Application definition
 
 INSTALLED_APPS = [
+    'reportes.apps.ReportesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
 ]
 
 MIDDLEWARE = [
