@@ -15,8 +15,8 @@ def registrar(request):
     form = ReporteForm(request.POST or None)
     if form.is_valid():
         digestRecibido = form.cleaned_data['hash']
-        hashLocal = hashlib.new("sha256", form.cleaned_data['informacion'])
-        digestLocal = hashLocal.digest()
+        hashLocal = hashlib.sha256(str(form.cleaned_data['informacion']).encode('utf-8'))
+        digestLocal = hashLocal.hexdigest()
         if digestRecibido == digestLocal:
             form.save()
             form = ReporteForm()
