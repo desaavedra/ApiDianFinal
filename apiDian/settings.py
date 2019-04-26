@@ -79,8 +79,8 @@ DATABASES = {
     'default': {
 	
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'apidian',
-        'USER': 'dianuser',
+        'NAME': 'apidian2',
+        'USER': 'apidian',
         'PASSWORD': 'password',
         'HOST': 'localhost',
         'PORT': '',
