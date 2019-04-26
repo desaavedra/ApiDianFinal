@@ -23,4 +23,4 @@ class ApiDianTest(TestCase):
         r2 = requests.post('https://apidian.club/reportes/reportes/post', data=payload2)
 
         self.assertEqual(r1.status_code, requests.codes.ok)
-        print(r2.status_code)
+        self.assertNotEqual(r1.status_code, requests.codes.ok)
