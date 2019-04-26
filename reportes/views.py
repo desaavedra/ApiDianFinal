@@ -12,20 +12,21 @@ import requests
 def registrar(request):
     #    hashLocal = hashlib.new("sha256", request)
     #   digestLocal = hashLocal.digest()
-    #   if digestLocal == request:
     form = ReporteForm(request.POST or None)
     if form.is_valid():
-        hash1 = form.cleaned_data['hash']
-        form.save()
-        form = ReporteForm()
+        digestRecibido = form.cleaned_data['hash']
+        hashLocal = hashlib.new("sha256", form.cleaned_data['informacion'])
+        digestLocal = hashLocal.digest()
+        if digestRecibido == digestLocal:
+            form.save()
+            form = ReporteForm()
+        else:
+             return HttpResponse("El hash no es correcto")
     context = {
         'form': form,
     }
     return render(request, 'Post_reportes.html', context)
 
-
-#    else:
-#        return HttpResponse("Erro")
 
 def index(request):
     return render(request, 'base.html', {})
